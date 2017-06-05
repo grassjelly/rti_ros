@@ -46,3 +46,6 @@
     ```
 4. Code!
 
+### Reference
+
+Credits to hengli for FindRTI.cmake file. https://github.com/hengli/vmav-ros-pkg/tree/master/middleware/dds_ros/cmake
