@@ -2,6 +2,7 @@
 
 #delete previous gencodes
 rm src/*.h
+rm include/*.h
 rm src/*.cxx
 rm src/*.xml
 rm src/make*
@@ -26,3 +27,5 @@ perl -pi -e "s/$PREV_IDL_lib/$CURRENT_IDL_lib/g" CMakeLists.txt
 #store the previous idl name so the bash file knows what to replace next call
 perl -pi -e "s/$PREV_IDL/$CURRENT_IDL/g" gencodes.cache
 
+#move generated header files to include folder
+mv src/*.h include
