@@ -14,7 +14,7 @@ find_package(RTI REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS include src
-  LIBRARIES dds_lib
+  LIBRARIES Velocities_lib
   DEPENDS nddsc nddscpp nddscore 
 )
 
@@ -35,13 +35,13 @@ link_directories(
   ${NDDSHOME}/lib/armv6vfphLinux3.xgcc4.7.2
 )
 
-add_library(dds_lib
+add_library(Velocities_lib
   src/Velocities.cxx
   src/VelocitiesPlugin.cxx
   src/VelocitiesSupport.cxx
 )
 
-target_link_libraries(dds_lib
+target_link_libraries(Velocities_lib
   nddsc
   nddscpp
   nddscore
@@ -54,22 +54,22 @@ add_executable(ros_to_dds
 
 target_link_libraries(ros_to_dds
   ${catkin_LIBRARIES}
-  dds_lib
+  Velocities_lib
 )
 
-add_executable(odomtest_sub
+add_executable(odomtest_subscribe
   src/odomtest_sub.cpp
 )
 
-target_link_libraries(odomtest_sub
+target_link_libraries(odomtest_subscribe
   ${catkin_LIBRARIES}
 )
 
-add_executable(odomtest_pub
+add_executable(odomtest_publish
   src/odomtest_pub.cpp
 )
 
-target_link_libraries(odomtest_pub
+target_link_libraries(odomtest_publish
   ${catkin_LIBRARIES}
 )
 
@@ -79,5 +79,5 @@ add_executable(dds_to_ros
 
 target_link_libraries(dds_to_ros
   ${catkin_LIBRARIES}
-  dds_lib
+  Velocities_lib
 )
