@@ -13,7 +13,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 find_package(RTI REQUIRED)
 
 catkin_package(
-  INCLUDE_DIRS include src
+  INCLUDE_DIRS include
   LIBRARIES Velocities_lib
   DEPENDS nddsc nddscpp nddscore 
 )
@@ -25,7 +25,6 @@ include_directories(
   ${NDDSHOME}/include
   ${NDDSHOME}/include/ndds
   include
-  src
 )
 
 add_definitions(-DRTI_UNIX)
